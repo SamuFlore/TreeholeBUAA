@@ -1,0 +1,40 @@
+{% extends 'base.html'%}
+
+{% block head %}
+<title>树洞：{{ treehole.title }}</title>
+<link rel="stylesheet" href="{{url_for('static',filename='css/detail.css')}}">
+{% endblock %}
+{% block content %}
+    <h3 class="page-title">{{ treehole.title }}</h3>
+    <p class="question-info">
+        <span>洞主：{{ treehole.author.username }}&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>时间：{{ treehole.create_time }}</span>
+    </p>
+    <hr>
+    <p class="question-content">
+        {{ treehole.content }}
+    </p>
+    <hr>
+    <h4>评论:({{treehole.replies|length}})</h4>
+    <form action="{{url_for('qa.reply')}}" method="POST">
+        <div class="form-group">
+            <input name="content" type="text" class="form-control" placeholder="评论不能少于3个字">
+            <input type="hidden" name="treehole_id" value="{{treehole.id}}">
+        </div>
+        <div class="form-group" style="text-align:right;">
+            <button  class="btn btn-primary">立即评论</button>
+        </div>
+    </form>
+    <ul class="answer-list">
+        {% for reply in treehole.replies%}
+        <li><div class="user-info">
+            <img src="{{url_for('static',filename='images/avatars.jpg')}}" class="avatar">
+            <span class="username">{{reply.author.username}}</span>
+            <span class="create-time">{{reply.create_time}}</span>
+        </div>
+        <p class="answer-content" style="line-height: 1.5;">
+            {{reply.content}}
+        </p></li>
+        {%endfor%}
+    </ul>
+{% endblock %}

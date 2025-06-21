@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+    <title>TreeholeBUAA 注册</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='js/register.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+<h2>TreeholeBUAA 注册</h2>
+<form method="POST" action="{{ url_for('auth.register') }}" class="form-register">
+    <label for="email">邮箱：</label>
+    <input type="email" id="email" name="email" required placeholder="请输入邮箱地址" aria-describedby="emailHelp" class="form-control">
+    <small id="emailHelp" class="form-text text-muted">请使用北京航空航天大学邮箱地址（xxx@buaa.edu.cn）</small>
+
+    <div class="form-group">
+        <label for="captcha">验证码：</label>
+        <input type="text" id="captcha" name="captcha" required placeholder="请输入六位验证码" class="form-control">
+        <button type="button" id="captchaBtn" class="captcha-btn">获取验证码</button>
+    </div>
+
+    <label for="password">密码：</label>
+    <input type="password" id="password" name="password" required placeholder="请输入8-20位包含大小写字母及数字的密码" class="form-control">
+
+    <label for="password_confirm">确认密码：</label>
+    <input type="password" id="password_confirm" name="password_confirm" required placeholder="请再次输入密码" class="form-control">
+
+    <input type="submit" value="注册" class="register-btn">
+</form>
+{% endblock %}
+

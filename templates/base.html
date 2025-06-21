@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    {% block head %}
+    {% endblock %}
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo-container">
+                <!-- 左侧图片位置 -->
+                <img src="/static/images/logo1.jpg" alt="Logo 1" class="logo">
+                <img src="/static/images/logo2.jpg" alt="Logo 2" class="logo" style="width: 185px;height: 45px;">
+                <h2 style="color: white; text-shadow: rgb(0, 0, 0) 3px 3px 3px;">TreeholeBUAA 北航树洞</h2>
+                <a href="{{ url_for('qa.index') }}" class="button">回到首页</a>
+            </div>
+            <div class="button-container">
+                <!-- 右侧按钮位置 -->
+                {% if user %}
+                <form method="GET" class="search-form" action="{{ url_for('qa.search') }}">
+                    <input type="text" name="treehole" placeholder="搜索树洞（关键字）" class="search-input">
+                    <button type="submit" class="button">搜索</button>
+                </form>
+                <a href="{{ url_for('qa.create_treehole') }}" class ="button">创建树洞</a>
+                <a href="{{ url_for('auth.manage') }}" class="button">{{user.username}}</a>
+                <a href="{{ url_for('auth.logout') }}" class="button">退出登录</a>
+                {% else %}
+                <form method="GET" class="search-form" action="{{ url_for('qa.search') }}">
+                    <input type="text" name="treehole" placeholder="搜索树洞（关键字）" class="search-input">
+                    <button type="submit" class="button">搜索</button>
+                </form>
+                <a href="{{ url_for('auth.login') }}" class="button">登录</a>
+                <a href="{{ url_for('auth.register') }}" class="button">注册</a>
+                {% endif %}
+                
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </main>
+</body>
+</html>

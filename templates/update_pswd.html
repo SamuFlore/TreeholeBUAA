@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>TreeholeBUAA 修改密码</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/update_pswd.css') }}">
+{% endblock %}
+
+{% block content %}
+<h2>TreeholeBUAA 更改密码</h2>
+        <form method="POST" class = "update-pswd-form">
+            <input type="hidden" name="key" id="key" value="{{ user.id }}">
+            <label for="password">旧密码：</label>
+            <input type="password" id="old_password" name="old_password" required placeholder="请输入旧密码" class="form-control">
+
+            <label for="new_password">新密码：</label>
+            <input type="password" id="new_password" name="new_password" required placeholder="请输入新密码" class="form-control">
+
+            <label for="confirm_password">确认新密码：</label>
+            <input type="password" id="new_password_confirm" name="new_password_confirm" required placeholder="请确认新密码" class="form-control">
+
+            <input type="submit" value="提交" style="box-shadow: grey 3px 3px 5px;">
+        </form>
+{% endblock %}

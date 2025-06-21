@@ -1,0 +1,58 @@
+.manage-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.profile-section, .settings-section, .treehole-section {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+
+.setbutton {
+    display: inline-block;
+    padding: 10px 15px;
+    margin-top: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: grey 3px 3px 5px;
+    margin-left: 10px;
+    
+}
+.setbutton:hover {
+    background-color: #1e7e34;
+}
+
+.form-control{
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: calc(100% - 40px);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 100px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}

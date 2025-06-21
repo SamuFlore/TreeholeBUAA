@@ -1,0 +1,128 @@
+/* blueprints/static/css/base.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px; /* 增加内部填充 */
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+label {
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.error {
+    color: red;
+    margin-bottom: 10px;
+}
+
+.success {
+    color: green;
+    margin-bottom: 10px;
+}
+
+.form-text {
+    margin-bottom: 10px;
+    margin-top: -5px; /* 调整这个值来改变提示信息与输入框的距离 */
+    color: grey;
+}
+
+/* 导航栏样式 */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #28a745;
+    padding: 10px 20px;
+    box-shadow: #696868 0px 10px 10px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    margin-right: 10px;
+    width: 50px; /* 根据需要调整图片宽度 */
+    height: 50px; /* 根据需要调整图片高度 */
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+}
+
+.button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    background-color: #218838;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: #104e1e 0px 3px 5px;
+}
+
+.button:hover {
+    background-color: #104e1e;
+}
+
+/* 表单组样式 */
+.form-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    margin-bottom: 0;
+}
+
+.form-group input[type="text"] {
+    width: calc(100% - 85px); /* 减少宽度以适应按钮 */
+}
+
+.form-group button {
+    padding-right: 5px;
+    background-color: #218838;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-group button:hover {
+    background-color: #104e1e;
+}
+
+a {
+    text-decoration: none;
+}
+
+.search-input {
+    width:300px;
+    height:30px;
+    border:none;
+    border-radius:5px;
+    padding-left:10px;
+    font-size:16px;
+    background-color:#f4f4f4;
+    outline:none;
+}
+

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>TreeholeBUAA 我的树洞</title>
+<link rel="stylesheet" href="{{ url_for('static',filename='css/my_treeholes.css') }}">
+{% endblock %}
+
+{% block content %}
+<ul class="treehole-list-group">
+    {% for treehole in treeholes %}
+    <li>
+            <div class="avatar-group">
+                <img src="{{url_for('static',filename='images/avatars.jpg')}}" alt="" class="avatar">
+            </div>
+            <div class="treehole-group">
+                <p class="treehole-title"><a href="{{ url_for('qa.detail_treehole', treehole_id=treehole.id) }}">{{ treehole.title }}</a></p>
+                <p class="treehole-content">{{ treehole.content }}</p>
+                <div class="treehole-info">
+                    <span class="treehole-author">洞主：{{ treehole.author.username }}</span>
+                    <span class="treehole-time">时间：{{ treehole.create_time }}</span>
+                </div>
+        </div>
+
+        </li>
+    {% endfor %}
+    
+</ul>
+{% endblock %}

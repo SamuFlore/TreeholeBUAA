@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>TreeholeBUAA {{ user.username }} 的空间</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/manage.css') }}"> <!-- 引入自定义样式 -->
+{% endblock %}
+
+{% block content %}
+<div class="manage-container">
+    <h1>{{ user.username }} 的TreeholeBUAA空间</h1>
+    
+    <div class="profile-section">
+        <h2>个人信息</h2>
+        <p><strong>邮箱:</strong> {{ user.email }}</p>
+        <p><strong>注册日期:</strong> {{ user.reg_time }}</p>
+        <!-- 其他个人信息 -->
+    </div>
+
+    <div class="settings-section">
+        <h2>设置</h2>
+        <a href="{{url_for('auth.update_username')}}" class="setbutton">申请新的TreeholeBUAA ID</a>
+        <a href="{{url_for('auth.update_pswd')}}" class="setbutton">更改密码</a>
+        <a href="{{url_for('auth.manage_treeholes')}}" class="setbutton">查看我的树洞</a>
+    </div>
+
+    
+</div>
+{% endblock %}
